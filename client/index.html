@@ -1,0 +1,28 @@
+<!doctype html><html lang="hi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gram Sevak</title><link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"></head><body>
+<header><b>🏛️ Gram Sevak</b><button id="lang" onclick="setLang()">EN</button></header>
+<main>
+<section id="home" class="screen show hero"><div class="overlay"><h1 data-i="tag"></h1>
+<button class="big" onclick="go('report')">📸 <span data-i="report"></span></button>
+<button class="big alt" onclick="go('feed')">📍 <span data-i="near"></span></button></div></section>
+<section id="report" class="screen">
+<div id="s1"><h2 data-i="s1"></h2><video id="cam" autoplay playsinline muted></video><canvas id="cv" hidden></canvas><img id="shot" hidden>
+<p id="gpsmsg" class="note"></p><button class="big" id="snap" onclick="snap()">📸 <span data-i="capture"></span></button>
+<button class="big alt" id="retake" hidden onclick="startCam()">🔄 <span data-i="retake"></span></button></div>
+<div id="s2" hidden><h2 data-i="s2"></h2><div class="row"><input id="place" data-ph="placeph"><button class="mic" onclick="mic('place')">🎤</button></div>
+<button class="big" onclick="analyze()">🤖 <span data-i="next"></span></button></div>
+<div id="s3" hidden><h2 data-i="s3"></h2><div id="badge"></div><h3 id="rtitle"></h3>
+<p class="note" data-i="editnote"></p><textarea id="rdesc" rows="6"></textarea>
+<div class="row"><button class="mic" onclick="mic('rdesc')">🎤</button><button class="big alt" onclick="polish()">✨ <span data-i="polish"></span></button></div>
+<button class="big" onclick="submitR()">✅ <span data-i="submit"></span></button></div>
+<p id="msg" class="msg"></p></section>
+<section id="feed" class="screen"><h2 data-i="near"></h2>
+<div class="filters"><select id="fk" onchange="loadFeed()"><option value="1">1 km</option><option value="5" selected>5 km</option><option value="10">10 km</option><option value="25">25 km</option></select>
+<select id="ft" onchange="loadFeed()"></select><select id="fs" onchange="loadFeed()"></select>
+<button onclick="toggleMap()" id="mapbtn">🗺️</button></div>
+<div id="map" hidden></div><div id="list"></div></section>
+</main>
+<nav><button onclick="go('home')">🏠<small data-i="home"></small></button><button onclick="go('report')">📸<small data-i="report"></small></button><button onclick="go('feed')">📍<small data-i="near"></small></button></nav>
+<footer data-i="disc"></footer>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script src="app.js"></script></body></html>

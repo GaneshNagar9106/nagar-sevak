@@ -1,0 +1,1 @@
+{"name":"gram-sevak","version":"1.0.0","scripts":{"start":"node --env-file=.env server/index.js"},"dependencies":{"express":"^4.19.2"}}
